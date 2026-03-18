@@ -1,5 +1,6 @@
 package com.mophuk.simple_controller;
 
+import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -30,5 +31,11 @@ public class SimpleController {
     public SimpleResponse getSimpleResponseWithPathVariable(@RequestBody SimpleRequest request) {
 
         return new SimpleResponse(request.getValue());
+    }
+
+    @PostConstruct
+    private void testSout() {
+
+        System.out.println("This is version 0.0.1");
     }
 }
